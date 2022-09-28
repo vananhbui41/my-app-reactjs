@@ -1,36 +1,11 @@
 import React, {Component} from 'react';
 import './App.css';
-
-const Notification = (props) => {
-  if (props.isShow) {
-    return (
-      <ul>
-        <li>News</li>
-      </ul>
-    )
-  } else {
-    return null
-  }
-}
-
+import ListComponent from './components/ListComponent';
 class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      isShowNotification: false
-    };
-  }
   render() {
-    const {isShowNotification} = this.state;
     return(
       <div>
-        <p>AAA</p>
-        <button onClick={() => {
-          this.setState({isShowNotification: !isShowNotification})
-        }}>
-          {!isShowNotification ? 'Show' : 'Hide'}
-        </button>
-        <Notification isShow = {isShowNotification}/>
+        <ListComponent/>
       </div>
     );
   }
